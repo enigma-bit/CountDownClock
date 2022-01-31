@@ -13,6 +13,7 @@ p {
 <body>
 
 <p id="clock"></p>
+<label for="start">Enter your date :</label>
 <input type="date" id="Date" value="">
 <button onclick="myFunction()">Submit Date</button>
 
@@ -31,7 +32,7 @@ function myFunction() {
   + minutes + "m " + seconds + "s ";
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("clock").innerHTML = "EXPIRED";
+    document.getElementById("clock").innerHTML = "Time-Up";
   }
 }, 1000);
   
