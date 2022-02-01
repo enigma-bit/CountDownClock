@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<h1>
+    <span id="hour">00</span> :
+    <span id="min">00</span> :
+    <span id="sec">00</span> 
+</h1>
+
+<button onclick="start()" id="start">Start</button>
+<button onclick="stop()" id="start">Stop</button>
+<button onclick="reset()">Reset</button>
+
+<style>
+p {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+}
+</style>
+</head>
+<body>
+
+<p id="clock"></p>
+<label for="start">Enter your date :</label>
+<input type="date" id="Date" value="">
+<button onclick="myFunction()">Submit Date</button>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("Date").value;
+  var countDownDate = new Date(x).getTime();
+  var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  document.getElementById("clock").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("clock").innerHTML = "Time-Up";
+  }
+}, 1000);
+  
+}
+
+
+</script>
+
+<script>
+
+    var x;
+    var sec = 0; 
+    var min = 0;
+    var hour = 0;
+    var secOut = 0;
+    var minOut = 0;
+    var hourOut = 0;
+    
+    function start() {
+      x = setInterval(timer, 10);
+    }
+    
+    function stop() {
+      clearInterval(x);
+    } 
+    
+    function reset() {
+    
+    sec = 0;
+    min = 0;
+    hour = 0;
+    
+    document.getElementById("sec").innerHTML = "00";
+    document.getElementById("min").innerHTML = "00";
+    document.getElementById("hour").innerHTML = "00";
+    
+    }
+    
+    function timer() {
+      
+      secOut = AddTime(sec);
+      minOut = AddTime(min);
+      hourOut = AddTime(hour);
+    
+     
+      if (sec == 60) {
+        min = min+1;
+        sec = 0;
+      }
+    
+      if (min == 60) {
+        min = 0;
+        hour = hour+1;
+    
+      }
+    
+      document.getElementById("sec").innerHTML = secOut;
+      document.getElementById("min").innerHTML = minOut;
+      document.getElementById("hour").innerHTML = hourOut;
+    
+      sec = sec+1;
+    
+    }
+    
+    function AddTime(i) {
+      if (i < 10) {
+        i = "0" + i;
+      }
+      return i;
+    }
+    
+    
+    
+    </script>
+
+
+</body>
+</html>
