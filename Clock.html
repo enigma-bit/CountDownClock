@@ -9,9 +9,13 @@
     <span id="sec">00</span> 
 </h1>
 
+<!-- stopwatch buttons -->
+
 <button onclick="start()" id="start">Start</button>
 <button onclick="stop()" id="start">Stop</button>
 <button onclick="reset()">Reset</button>
+
+<!-- Text style  -->
 
 <style>
 p {
@@ -25,8 +29,16 @@ p {
 
 <p id="clock"></p>
 <label for="start">Enter your date :</label>
+
+<!-- Date input for countdown clock -->
+
 <input type="date" id="Date" value="">
+
+<!-- Submit button for countdown clock -->
+
 <button onclick="myFunction()">Submit Date</button>
+
+<!-- Container for javascript function for countdown -->
 
 <script>
 function myFunction() {
@@ -52,8 +64,10 @@ function myFunction() {
 
 </script>
 
-<script>
+<!-- container for javascript code for stopwatch -->
 
+<script>
+  // initializing variables
     var x;
     var sec = 0; 
     var min = 0;
@@ -62,14 +76,20 @@ function myFunction() {
     var minOut = 0;
     var hourOut = 0;
     
+  //function to start clock
+
     function start() {
       x = setInterval(timer, 10);
     }
     
+  //function to stop clock
+
     function stop() {
       clearInterval(x);
     } 
     
+  // function to reset clock
+
     function reset() {
     
     sec = 0;
@@ -82,6 +102,8 @@ function myFunction() {
     
     }
     
+//function adding 1 to hour if minutes get to 60 and so on
+
     function timer() {
       
       secOut = AddTime(sec);
@@ -107,7 +129,9 @@ function myFunction() {
       sec = sec+1;
     
     }
-    
+
+    // function adding 1 to seconds, minutes and hours
+
     function AddTime(i) {
       if (i < 10) {
         i = "0" + i;
