@@ -3,31 +3,19 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<h1>
-    <span id="hour">00</span> :
-    <span id="min">00</span> :
-    <span id="sec">00</span> 
-</h1>
-
-<!-- stopwatch buttons -->
-
-<button onclick="start()" id="start">Start</button>
-<button onclick="stop()" id="start">Stop</button>
-<button onclick="reset()">Reset</button>
-
 <!-- Text style  -->
 
 <style>
-p {
-  text-align: center;
-  font-size: 60px;
-  margin-top: 0px;
+
+div {
+  border: solid;
 }
+
 </style>
 </head>
 <body>
 
-<p id="clock"></p>
+<div class="solid" id="clock">
 <label for="start">Enter your date :</label>
 
 <!-- Date input for countdown clock -->
@@ -63,8 +51,27 @@ function myFunction() {
 
 
 </script>
+</div>
+<br></br>
 
 <!-- container for javascript code for stopwatch -->
+<div class="solid" id="stopwatch">
+<label for="stopwatch">Stopwatch</label> 
+<h1>
+  <span id="hour">00</span> :
+  <span id="min">00</span> :
+  <span id="sec">00</span> 
+</h1>
+
+
+  
+
+<!-- stopwatch buttons -->
+
+<button onclick="start()" id="start">Start</button>
+<button onclick="stop()" id="start">Stop</button>
+<button onclick="reset()">Reset</button>
+</div>
 
 <script>
   // initializing variables
@@ -142,7 +149,33 @@ function myFunction() {
     
     
     </script>
+</p>
 
+
+
+<div class="soild" id="getTime">
+
+<button onclick="Time()" id="start">Check Time</button>
+<script>
+function Time() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('getTime').innerHTML =  h + ":" + m + ":" + s;
+  setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i}; 
+  return i;
+}
+
+
+</script>
+</div>
 
 </body>
 </html>
