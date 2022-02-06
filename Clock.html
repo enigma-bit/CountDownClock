@@ -11,6 +11,15 @@ div {
   border: solid;
 }
 
+.hrow {
+font-weight:bold;
+color: #C1E97C;
+}
+.hrow td{
+padding-top: 20px;
+width: 140px;
+}
+
 </style>
 </head>
 <body>
@@ -275,6 +284,8 @@ function myFunction() {
     
     document.getElementById("Amsterdam").innerHTML = worldClock(1, "Europe")
     document.getElementById("Frankfurt").innerHTML = worldClock(1, "Europe")
+    document.getElementById("HongKong").innerHTML = worldClock(8, "HongKong")
+    document.getElementById("Tokyo").innerHTML = worldClock(9, "Tokyo")
     
     
     setTimeout("worldClockZone()", 1000)
@@ -285,7 +296,7 @@ function myFunction() {
     </script>
     </head>
     <body>
-        <table cellspacing="5px">
+    <table cellspacing="5px">
         <tr class="hrow">
             <td>Amsterdam</td>
             </tr>
@@ -296,9 +307,20 @@ function myFunction() {
             <td>Frankfurt</td>
             </tr>
             <tr>
-            <td><span id="Frankfurt"></span></td>
-            </tr>
-            
+                <td><span id="Frankfurt"></span></td>
+                </tr>
+                <tr class="hrow">
+                   <td>Hong Kong</td>
+                    </tr>
+                    <tr>
+                    <td><span id="HongKong"></span></td>
+                    </tr>
+                    <tr class="hrow">
+                    <td>Tokyo</td>
+                    </tr>
+                    <tr>
+                    <td><span id="Tokyo"></span></td>
+                    </tr>
     </body>
 </div>
 
