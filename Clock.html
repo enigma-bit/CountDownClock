@@ -163,166 +163,91 @@ function myFunction() {
 
 
 <div class="soild" id="getTime">
-
+  <body>
+    <div class="container">
+      <h1>WORLD CLOCK</h1>
+      <table class="timeZone">
+      </table>
+    </div>
+  </script>
+  </body>
   <script>
-
-    function worldClock(zone, region){
-    var dst = 0
-    var time = new Date()
-    var gmtMS = time.getTime() + (time.getTimezoneOffset() * 60000)
-    var gmtTime = new Date(gmtMS)
-    var day = gmtTime.getDate()
-    var month = gmtTime.getMonth()
-    var year = gmtTime.getYear()
-    if(year < 1000){
-    year += 1900
-    }
-    var monthArray = new Array("January", "February", "March", "April", "May", "June", "July", "August", 
-            "September", "October", "November", "December")
-    var monthDays = new Array("31", "28", "31", "30", "31", "30", "31", "31", "30", "31", "30", "31")
-    if (year%4 == 0){
-    monthDays = new Array("31", "29", "31", "30", "31", "30", "31", "31", "30", "31", "30", "31")
-    }
-    if(year%100 == 0 && year%400 != 0){
-    monthDays = new Array("31", "28", "31", "30", "31", "30", "31", "31", "30", "31", "30", "31")
-    }
-    
-    var hr = gmtTime.getHours() + zone
-    var min = gmtTime.getMinutes()
-    var sec = gmtTime.getSeconds()
-    
-    if (hr >= 24){
-    hr = hr-24
-    day -= -1
-    }
-    if (hr < 0){
-    hr -= -24
-    day -= 1
-    }
-    if (hr < 10){
-    hr = " " + hr
-    }
-    if (min < 10){
-    min = "0" + min
-    }
-    if (sec < 10){
-    sec = "0" + sec
-    }
-    if (day <= 0){
-    if (month == 0){
-      month = 11
-      year -= 1
+    var data=[
+      {
+        country:"Amsterdam",
+        timeZone:"Europe/Amsterdam",
+      },
+      {
+        country:"Berlin",
+        timeZone:"Europe/Berlin"
+      },
+      {
+        country:"BANGKOK",
+        timeZone:"Asia/Bangkok"
+      },
+      {
+        country:"TAIWAN",
+        timeZone:"Asia/Taipei"
+      },
+      {
+        country:"Harare",
+        timeZone:"Africa/Harare"
+      },
+      {
+        country:"Blantyre",
+        timeZone:"Africa/Blantyre"
       }
-      else{
-      month = month -1
-      }
-    day = monthDays[month]
-    }
-    if(day > monthDays[month]){
-      day = 1
-      if(month == 11){
-      month = 0
-      year -= -1
-      }
-      else{
-      month -= -1
-      }
-    }
+    ]
     
     
-    if (region == "Europe"){
-      var startDST = new Date()
-      var endDST = new Date()
-      startDST.setMonth(2)
-      startDST.setHours(1)
-      startDST.setDate(31)
-      var dayDST = startDST.getDay()
-      startDST.setDate(31-dayDST)
-      endDST.setMonth(9)
-      endDST.setHours(0)
-      endDST.setDate(31)
-      dayDST = endDST.getDay()
-      endDST.setDate(31-dayDST)
-      var currentTime = new Date()
-      currentTime.setMonth(month)
-      currentTime.setYear(year)
-      currentTime.setDate(day)
-      currentTime.setHours(hr)
-      if(currentTime >= startDST && currentTime < endDST){
-        dst = 1
-        }
-    }
+    option={day:"2-digit",month:"short",year:"numeric",hour12:false,hour:"numeric",minute:"2-digit"};
     
-    if (dst == 1){
-      hr -= -1
-      if (hr >= 24){
-      hr = hr-24
-      day -= -1
+    
+    var timeTable=document.querySelector('.timeZone');
+    
+    
+    function clockMaker(){
+      
+      timeTable.innerHTML='';
+      
+      let now=new Date();
+      
+      for(let i=0;i<data.length;i++){
+        option.timeZone=data[i].timeZone;
+        let str=now.toLocaleString('en',option);
+    
+        
+        let splice=str.split(',')
+        let month=splice[0].split(' ')[0];
+        let day=splice[0].split(' ')[1];
+        let year=splice[1];
+    
+    
+        let DMY_combine=day+' '+month+','+year;
+        let time=splice[2];
+        let country=data[i].country;
+    
+       
+        var tr=document.createElement('tr');
+        if(i==0 | i==4){
+          tr.setAttribute('class','bg_dark');
+        }   
+        tr.innerHTML=`<td>
+                      <h3>${country}</h3><br><p>${DMY_combine}</p>
+                      </td>
+                      <td><p class="time">${time}</p>
+                      `
+       
+        timeTable.appendChild(tr);
+        
       }
-      if (hr < 10){
-      hr = " " + hr
-      }
-      if(day > monthDays[month]){
-      day = 1
-      if(month == 11){
-      month = 0
-      year -= -1
-      }
-      else{
-      month -= -1
-      }
-      }
-    return monthArray[month] + " " + day + ", " + year + "<br>" + hr + ":" + min + ":" + sec + " DST"
-    }
-    else{
-    return monthArray[month] + " " + day + ", " + year + "<br>" + hr + ":" + min + ":" + sec
-    }
+      
     }
     
-    function worldClockZone(){
+    clockMaker();
+    setInterval(clockMaker,20000);
     
-    
-    document.getElementById("Amsterdam").innerHTML = worldClock(1, "Europe")
-    document.getElementById("Frankfurt").innerHTML = worldClock(1, "Europe")
-    document.getElementById("HongKong").innerHTML = worldClock(8, "HongKong")
-    document.getElementById("Tokyo").innerHTML = worldClock(9, "Tokyo")
-    
-    
-    setTimeout("worldClockZone()", 1000)
-    }
-    window.onload=worldClockZone;
-    
-    //-->
     </script>
-    </head>
-    <body>
-    <table cellspacing="5px">
-        <tr class="hrow">
-            <td>Amsterdam</td>
-            </tr>
-            <tr>
-            <td><span id="Amsterdam"></span></td>
-            </tr>
-            <tr class="hrow">
-            <td>Frankfurt</td>
-            </tr>
-            <tr>
-                <td><span id="Frankfurt"></span></td>
-                </tr>
-                <tr class="hrow">
-                   <td>Hong Kong</td>
-                    </tr>
-                    <tr>
-                    <td><span id="HongKong"></span></td>
-                    </tr>
-                    <tr class="hrow">
-                    <td>Tokyo</td>
-                    </tr>
-                    <tr>
-                    <td><span id="Tokyo"></span></td>
-                    </tr>
-    </body>
-</div>
 
 </body>
 </html>
