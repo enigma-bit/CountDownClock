@@ -7,14 +7,39 @@
 
 <style>
 
+#stopwatch body {
+    height: 100vh;
+    margin: 40px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+#stopwatch .display {
+    display: flex;
+    left: 50%;
+    align-items: center;
+    justify-content: center;
+    font-family: "nunito", "poppins", sans-serif;
+    font-weight: 700;
+    font-size: 60px;
+    color: black;
+  }
+  
+  #stopwatch p {
+    margin: 5px;
+  }
+
 div {
   border: solid;
+  position: sticky;
 }
 
 .hrow {
 font-weight:bold;
 color: #000000;
 }
+
 .hrow td{
 padding-top: 20px;
 width: 140px;
@@ -65,98 +90,129 @@ function myFunction() {
 
 <!-- container for javascript code for stopwatch -->
 <div class="solid" id="stopwatch">
-<label for="stopwatch">Stopwatch</label> 
-<h1>
-  <span id="hour">00</span> :
-  <span id="min">00</span> :
-  <span id="sec">00</span> 
-</h1>
-
+  <label for="stopwatch">Stopwatch</label> 
+    <p class="timerDisplay" id="timerHrs">00</p> :
+    <p class="timerDisplay" id="timerMins">00</p> :
+    <p class="timerDisplay" id="timerSec">00</p> :
+    <p class="timerDisplay" id="timerMilisec">00</p>
+  
 
   
 
 <!-- stopwatch buttons -->
 
-<button onclick="start()" id="start">Start</button>
-<button onclick="stop()" id="start">Stop</button>
-<button onclick="reset()">Reset</button>
+<button type="button" id="startBtn">Start</button>
+<button type="button" id="resetBtn">Reset</button>
+<button type="button" id="lapBtn">Lap</button>
+
+
+<h1>Laps:</h1>
+
+  
+    <p id="lapRecord"></p>
+  
 </div>
 
-<script>
-  // initializing variables
-    var x;
-    var sec = 0; 
-    var min = 0;
-    var hour = 0;
-    var secOut = 0;
-    var minOut = 0;
-    var hourOut = 0;
+  <script>
+    const lapBtn = document.getElementById('lapBtn');
+    const timerMilliSec = document.getElementById('timerMilliSec');
+    const timerSec = document.getElementById('timerSec');
+    const timerMins = document.getElementById('timerMins');
+    const timerHrs = document.getElementById('timerHrs');
+    const startBtn = document.getElementById('startBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const lapRecord = document.getElementById('lapRecord');
     
-  //function to start clock
-
+    let hours = 0;
+    let minutes = 0;
+    let seconds = 0;
+    let miliseconds = 0;
+    
+    let displayMilisec = miliseconds;
+    let displaySec = seconds;
+    let displayMins = minutes;
+    let displayHours = hours;
+    
+    let interval = null;
+    
+    let status = "stopped";
+    
+    let lapNow = null;
+    
     function start() {
-      x = setInterval(timer, 10);
+      miliseconds++;
+    
+      if (miliseconds < 10) displayMilisec = "0" + miliseconds.toString();
+      else displayMilisec = miliseconds;
+    
+      if (seconds < 10) displaySec = "0" + seconds.toString();
+      else displaySec = seconds;
+    
+      if (minutes < 10) displayMins = "0" + minutes.toString();
+      else displayMins = minutes;
+    
+      if (hours < 10) displayHours = "0" + hours.toString();
+      else displayHours = hours;
+    
+      if (miliseconds / 100 === 1) {
+        seconds++;
+        miliseconds = 0;
+    
+        if (seconds / 60 === 1) {
+          minutes++;
+          seconds = 0;
+    
+          if (minutes / 60 === 1) {
+            hours++;
+            minutes = 0;
+          }
+        }
+      }
+    
+    
+    
+      timerMilisec.innerHTML = displayMilisec;
+      timerSec.innerHTML = displaySec;
+      timerMins.innerHTML = displayMins;
+      timerHrs.innerHTML = displayHours;
+    
     }
     
-  //function to stop clock
-
-    function stop() {
-      clearInterval(x);
-    } 
+    function startStop() {
+      if (status === "stopped") {
+        interval = setInterval(start, 10);
+        startBtn.innerHTML = "Stop";
+        status = "started";
+      } else {
+        clearInterval(interval);
+        startBtn.innerHTML = "Start";
+        status = "stopped";
+      }
+    }
     
-  // function to reset clock
-
     function reset() {
-    
-    sec = 0;
-    min = 0;
-    hour = 0;
-    
-    document.getElementById("sec").innerHTML = "00";
-    document.getElementById("min").innerHTML = "00";
-    document.getElementById("hour").innerHTML = "00";
-    
+      clearInterval(interval);
+      miliseconds = 0;
+      seconds = 0;
+      minutes = 0;
+      hours = 0;
+      timerMilisec.innerHTML = "00";
+      timerSec.innerHTML = "00";
+      timerMins.innerHTML = "00";
+      timerHrs.innerHTML = "00";
+      startBtn.innerHTML = "Start";
+      lapRecord.innerHTML = '';
+      status = "stopped";
     }
     
-//function adding 1 to hour if minutes get to 60 and so on
-
-    function timer() {
-      
-      secOut = AddTime(sec);
-      minOut = AddTime(min);
-      hourOut = AddTime(hour);
-    
-     
-      if (sec == 60) {
-        min = min+1;
-        sec = 0;
-      }
-    
-      if (min == 60) {
-        min = 0;
-        hour = hour+1;
-    
-      }
-    
-      document.getElementById("sec").innerHTML = secOut;
-      document.getElementById("min").innerHTML = minOut;
-      document.getElementById("hour").innerHTML = hourOut;
-    
-      sec = sec+1;
-    
-    }
-
-    // function adding 1 to seconds, minutes and hours
-
-    function AddTime(i) {
-      if (i < 10) {
-        i = "0" + i;
-      }
-      return i;
+    function lap() {
+      lapNow = `<div class="lap">${hours} : ${minutes} : ${seconds} : ${miliseconds}</div>`;
+      lapRecord.innerHTML += lapNow;
     }
     
-    
-    
+    lapBtn.addEventListener('click', lap);
+    startBtn.addEventListener('click', startStop);
+    resetBtn.addEventListener('click', reset);
     </script>
 </p>
 
