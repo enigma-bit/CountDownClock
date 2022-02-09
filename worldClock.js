@@ -1,0 +1,12 @@
+const harare = new Date().toLocaleString('en-US', { timeZone: 'Africa/Harare' });
+document.getElementById("hre").innerHTML= 'Harare Time is ' + harare
+const Abidjan = new Date().toLocaleString('en-US', { timeZone: 'Africa/Abidjan' });
+document.getElementById("abj").innerHTML= 'Abijan Time is ' + Abidjan
+const London = new Date().toLocaleString('en-US', { timeZone: 'Europe/London' });
+document.getElementById("lnd").innerHTML= 'London Time is ' + London
+const Amsterdam = new Date().toLocaleString('en-US', { timeZone: 'Europe/Amsterdam' });
+document.getElementById("amst").innerHTML= 'Amsterdam Time is ' + Amsterdam
+const Bangkok = new Date().toLocaleString('en-US', { timeZone: 'Asia/Bangkok' });
+document.getElementById("bangk").innerHTML= 'Bangkok Time is ' + Bangkok
+const Taiwan = new Date().toLocaleString('en-US', { timeZone: 'Asia/Taipei' });
+document.getElementById("taiwn").innerHTML= 'Taiwan Time is ' + Taiwan
