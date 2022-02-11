@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Time Project</title>    
+    </head>
+    <body>
+
+<!-- HTML code for stopwatch  -->
+<div class="solid" id="stopwatchdiv">
+    <script src="stopwatch.js"></script>
+    
+        <p id = 'stopwatch'></p>
+        
+        <button onclick="start()" id = 'start'> start </button>
+        <button onclick="stop()" id = 'stop'> stop</button>
+        <button onclick="reset()" id = 'reset'> reset</button>
+        <button onclick="lap()" id = 'lap'> lap</button>
+
+        <h3>Laps:</h3>
+
+        <div id="laps">
+          <p id="laprec"></p>
+        </div>
+</div>        
+<!-- html code for stopwatch -->
+
+<!-- html code for world clock -->
+<div class="solid" id="worldclockdiv">
+    <h3>World Clock</h3>
+<script src="worldClock.js"></script>
+    <div id="world">
+
+    <li id="hre"></li>
+    <li id="abj"></li>
+    <li id="lnd"></li>
+    <li id="amst"></li>
+    <li id="bangk"></li>
+    <li id="taiwn"></li>
+    
+    </div>
+</div>
+<!-- html code for world clock -->
+
+<div class="solid" id="countdowndiv">
+    <script src="countdown.js"></script>  
+<!-- html code for countdown clock -->
+<div class="solid" id="clock">
+    <label for="start">Enter your date :</label>   
+    <input type="date" id="Date" value="">    
+    <button onclick="myFunction()">Submit Date</button>  
+</div>
+<!-- html code for countdown clock -->
+
+    </body>
+</html>
