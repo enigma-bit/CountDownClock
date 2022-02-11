@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+    
+<p>Stopwatch App</p>
+
+<div id="time"> </div>
+<input id="start" type="button" value="START" onclick="stopWatch('start')">
+<input id="stop" type="button" value="STOP" onclick="stopWatch('stop')">
+<input id="lap" type="button" value="LAP" onclick="stopWatch('lap')">
+<div id="lap"> </div>
+
+<script>
+console.log("Testing script");
+
+let startFunc1 = () =>{
+let startTime = new Date();
+
+let stopwatch = setInterval(()=>{
+
+    let currentTime = new Date();
+    let lapsedTime = currentTime - startTime ;
+    let lapsedHours = currentTime.getHours() - startTime.getHours();
+    let lapsedMinutes = currentTime.getMinutes() - startTime.getMinutes();
+    let lapsedSeconds = currentTime.getSeconds() - startTime.getSeconds();
+
+    let timeDiv = document.querySelector('#time');
+
+    timeDiv.innerHTML = `HH:${lapsedHours} MM: ${lapsedMinutes} SS: ${lapsedSeconds}`
+
+}
+,2000)
+console.log(startTime);
+}
+
+let stopFunc1 = function () {
+    clearInterval(stopwatch)
+}
+//console.log(startTime);
+
+let stopWatch = (flag) =>{
+
+    
+
+    let lapsedTime = 0;
+    let timeText;
+
+    let startStopwatch = setInterval(()=>{
+    lapsedTime +=2;
+
+    let timeDiv = document.querySelector('#time');
+    timeText = timeDiv.innerHTML = `Lapsed Time: HH:${lapsedTime} MM:${lapsedTime} SS:${lapsedTime%60}`;
+    }, 2000)
+
+    if(flag==="stop"){clearInterval(startStopwatch);
+    console.log("test stop");
+    }
+
+    if(flag==="lap"){
+        let lapDiv = document.querySelector('#lap');
+        lapDiv.textContent = "Test" +'<br>';
+        console.log("test lap");
+    }
+
+
+
+}
+</script>
+</body>
+
+
+
+<!-- <script src="./myscript.js" defer></script> -->
+
+</html>
