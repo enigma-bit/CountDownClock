@@ -1,5 +1,4 @@
 var Addsec
-var AddsecValue= Addsec
 const laps = []
 let i = 0;
 
