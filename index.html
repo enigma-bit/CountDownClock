@@ -81,12 +81,11 @@
 
 <div id="counter" class="tabcontent">
 <script src="counter.js"></script>
-  <h3> Counter </h3>
-  <button onclick="EvenNumbers()" id = 'Odd'> Even Numbers </button>
-<button onclick="OddNumbers()" id = 'Even'> Odd Numbers</button>
+<h3> Counter </h3>
+<button type="button" onClick="clicks++;updateClickCount();" id="push">Add.</button>
+<button type="button" onClick="clicks--;updateClickCount();" id="push">Subtract.</button>
+<div id="clickCount"></div>
 
-<p id = 'counterEven'></p>
-<p id = 'counterOdd'></p>
 
 </div>
 
