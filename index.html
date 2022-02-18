@@ -1,36 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <link rel="stylesheet" href="style.css">
-    <title>Time Project</title>    
-    </head>
-    <body>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Time Project</title>
+<link rel="stylesheet" href="style.css">
+<script src="tabs.js"></script>
+</head>
+<body>
+
+<h2>Time Project</h2>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'stopwatchdiv')">Stopwatch</button>
+  <button class="tablinks" onclick="openCity(event, 'worldclockdiv')">World Clock</button>
+  <button class="tablinks" onclick="openCity(event, 'countdown')">Countdown Clock </button>
+  <button class="tablinks" onclick="openCity(event, 'counter')">Counter</button>
+</div>
 
 <!-- HTML code for stopwatch  -->
-<div class="solid" id="stopwatchdiv">
-<h3> Stopwatch </h3>
-    <script src="stopwatch.js"></script>
+<div id="stopwatchdiv" class="tabcontent">
+  <h3>Stopwatch</h3>
+  <script src="stopwatch.js"></script>
     
-        <p id = 'stopwatch'></p>
-        
-        <button onclick="start()" id = 'start'> start </button>
-        <button onclick="stop()" id = 'stop'> stop</button>
-        <button onclick="reset()" id = 'reset'> reset</button>
-        <button onclick="lap()" id = 'lap'> lap</button>
+  <p id = 'stopwatch'></p>
+  
+  <button onclick="start()" id = 'start'> start </button>
+  <button onclick="stop()" id = 'stop'> stop</button>
+  <button onclick="reset()" id = 'reset'> reset</button>
+  <button onclick="lap()" id = 'lap'> lap</button>
 
-        <h3>Laps:</h3>
+  <h3>Laps:</h3>
 
-        <p id="laps">
-          <p id="laprec"></p>
-        </p>
-</div>        
-<!-- html code for stopwatch -->
+  <p id="laps">
+    <p id="laprec"></p>
+  </p>
+</div>
+<!-- HTML code for stopwatch  -->
 
 <!-- html code for world clock -->
-<div class="solid" id="worldclockdiv">
-    <h3>World Clock</h3>
 
-    <p id="world">
+<div id="worldclockdiv" class="tabcontent">
+  <h3>WorldClock</h3>
+  <p id="world">
 
     <ul id="hre"></ul>
     <ul id="abj"></ul>
@@ -41,33 +52,46 @@
     </p>
 <script src="worldClock.js"></script>
 </div>
+
 <!-- html code for world clock -->
-  
+
 <!-- html code for countdown clock -->
- 
-<div class="solid" id="countdown">
-<script src="countdown.js"></script>
-<h3> Countdown Clock </h3>
-    <label for="start">Enter your date :</label>   
+
+<div id="countdown" class="tabcontent">
+  <h3>Countdown Clock</h3>
+  <script src="countdown.js"></script>
+  <label for="start">Enter your date :</label>   
     <input type="date" id="Date" value="">    
     <button onclick="myFunction()">Submit Date</button>  
 </div>
+
 <!-- html code for countdown clock -->
+
 <!-- html code for counter -->
-    
+
+<div id="countdown" class="tabcontent">
+    <h3>Countdown Clock</h3>
+    <script src="countdown.js"></script>
+    <label for="start">Enter your date :</label>   
+      <input type="date" id="Date" value="">    
+      <button onclick="myFunction()">Submit Date</button>  
+  </div>
+
+<!-- html code for counter -->
+
+<div id="counter" class="tabcontent">
 <script src="counter.js"></script>
-<div class="solid" id="counterdiv">
-    <h3> Counter </h3>
-    
-<button onclick="EvenNumbers()" id = 'Odd'> Even Numbers </button>
+  <h3> Counter </h3>
+  <button onclick="EvenNumbers()" id = 'Odd'> Even Numbers </button>
 <button onclick="OddNumbers()" id = 'Even'> Odd Numbers</button>
 
 <p id = 'counterEven'></p>
 <p id = 'counterOdd'></p>
-    
+
 </div>
+
 <!-- html code for counter -->
 
-
-    </body>
-</html>
+   
+</body>
+</html> 
