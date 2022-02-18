@@ -5,7 +5,7 @@ var number = 0;
 
         function checkNumber() {
 
-            if(clicks % 2 == 0) {
+            if(number % 2 == 0) {
                 var result = "The number is even.";
                 document.getElementById("display").innerHTML = result;
 
