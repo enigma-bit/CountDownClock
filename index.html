@@ -82,9 +82,11 @@
 <div id="counter" class="tabcontent">
 <script src="counter.js"></script>
 <h3> Counter </h3>
-<button type="button" onClick="clicks++;updateClickCount();" id="push">Add.</button>
-<button type="button" onClick="clicks--;updateClickCount();" id="push">Subtract.</button>
+  
+<button type="button" onClick="clicks++;updateClickCount();checkcount()" id="push">Add.</button>
+<button type="button" onClick="clicks--;updateClickCount();checkcount()" id="push">Subtract.</button>
 <div id="clickCount"></div>
+<div id="display"></div>
 
 
 </div>
