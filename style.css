@@ -1,8 +1,19 @@
-div {
-  border: solid;
-  margin: 70px;
-  position: sticky;
+#stopwatchdiv {
+  position:absolute; top:100%;
 }
+
+#worldclockdiv {
+  position:absolute; top:100%;
+}
+
+#countdown {
+  position:absolute; top:100%;
+}
+
+#counter {
+  position:absolute; top:100%;
+}
+
 
 body {
   font-size: 10pt;
@@ -19,6 +30,7 @@ body {
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
+  position:relative; 
 }
 
 
