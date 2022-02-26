@@ -31,10 +31,7 @@ body, html {
   padding-right: 500px;
   padding-left: 500px;
   height: 100%;
-  border: solid;
-  margin: 70px;
-  position: absolute;
-}
+ }
 
 #footer {
   position : absolute;
