@@ -8,87 +8,61 @@
 </head>
 <body>
 
-<h2>Time Project</h2>
+<button class="tablink" onclick="openPage('stopwatchdiv', this, 'red')">Stopwatch</button>
+<button class="tablink" onclick="openPage('worldclockdiv', this, 'green')" id="defaultOpen">World Clock</button>
+<button class="tablink" onclick="openPage('countdown', this, 'blue')">Countdown Clock</button>
+<button class="tablink" onclick="openPage('counter', this, 'orange')">Counter</button>
 
-<div class="warpper">
-  <input class="radio" id="one" name="group" type="radio" checked>
-  <input class="radio" id="two" name="group" type="radio">
-  <input class="radio" id="three" name="group" type="radio">
-  <input class="radio" id="four" name="group" type="radio">
+<div id="stopwatchdiv" class="tabcontent">
+  <h3>Stopwatch</h3>
+  <script src="stopwatch.js"></script>
+    
+  <p id = 'stopwatch'></p>
+  
+  <button onclick="start()" id = 'start'> start </button>
+  <button onclick="stop()" id = 'stop'> stop</button>
+  <button onclick="stop();displayReset()" id = 'reset'> reset</button>
+  <button onclick="lap()" id = 'lap'> lap</button>
 
-  <div class="tabs">
-  <label class="tab" id="one-tab" for="one">Stopwatch</label>
-  <label class="tab" id="two-tab" for="two">World Clock</label>
-  <label class="tab" id="three-tab" for="three">Countdown Clock</label>
-  <label class="tab" id="three-tab" for="four">Counter</label>
-    </div>
+  <h3>Laps:</h3>
 
-  <div class="panels">
-  <div class="panel" id="one-panel">
-    <div class="panel-title">Stopwatch</div>
-    <div id="stopwatchdiv" class="tabcontent">
-        <h3>Stopwatch</h3>
-        <script src="stopwatch.js"></script>
-          
-        <p id = 'stopwatch'></p>
-        
-        <button onclick="start()" id = 'start'> start </button>
-        <button onclick="stop()" id = 'stop'> stop</button>
-        <button onclick="stop();displayReset()" id = 'reset'> reset</button>
-        <button onclick="lap()" id = 'lap'> lap</button>
-      
-        <h3>Laps:</h3>
-      
-        <p id="laps">
-          <p id="laprec"></p>
-        </p>
-      </div>
-  </div>
-  <div class="panel" id="two-panel">
-    <div class="panel-title">World Clock</div>
-    <div id="worldclockdiv" class="tabcontent">
-        <h3>WorldClock</h3>
-        <p id="world">
-      
-          <ul id="hre"></ul>
-          <ul id="abj"></ul>
-          <ul id="lnd"></ul>
-          <ul id="amst"></ul>
-          <ul id="bangk"></ul>
-          <ul id="taiwn"></ul>
-          </p>
-      <script src="worldClock.js"></script>
-      </div>
-  </div>
-  <div class="panel" id="three-panel">
-    <div class="panel-title">Countdown Clock</div>
-    <div id="countdown" class="tabcontent">
-        <p id="test"></p>
-        <h3>Countdown Clock</h3>
-          
-      
-        <form>
-          <script src="countdown.js"></script>
-          <label for="start">Enter your date :</label> 
-          <input type="date" id="Date" value="" required>
-          <button onclick="myFunction()">Submit Date</button>
-        </form>   
-      </div>
-  </div>
-  <div class="panel" id="four-panel">
-    <div class="panel-title">Counter</div>
-    <div id="counter" class="tabcontent">
-        <script src="counter.js"></script>
-          <h3> Counter </h3>
-          <button onclick="EvenNumbers()" id = 'Odd'> Even Numbers </button>
-        <button onclick="OddNumbers()" id = 'Even'> Odd Numbers</button>
-        
-        <p id = 'counterEven'></p>
-        <p id = 'counterOdd'></p>
-        
-        </div>
-  </div>
-  </div>
+  <p id="laps">
+    <p id="laprec"></p>
+  </p>
+</div>
+
+<div id="worldclockdiv" class="tabcontent">
+  <h3>WorldClock</h3>
+  <p id="world">
+
+    <ul id="hre"></ul>
+    <ul id="abj"></ul>
+    <ul id="lnd"></ul>
+    <ul id="amst"></ul>
+    <ul id="bangk"></ul>
+    <ul id="taiwn"></ul>
+    </p>
+<script src="worldClock.js"></script>
+</div>
+
+<div id="countdown" class="tabcontent">
+  <h3>Countdown Clock</h3>
+    <script src="countdown.js"></script>
+    <label for="start">Enter your date :</label>   
+      <input type="date" id="Date" value="">    
+      <button onclick="myFunction()">Submit Date</button>  
+</div>
+
+<div id="counter" class="tabcontent">
+  <script src="counter.js"></script>
+  <h3> Counter </h3>
+    
+  <button type="button" onClick="number++;updateNumber();checkNumber()">Add.</button>
+  <button type="button" onClick="number--;updateNumber();checkNumber()">Subtract.</button>
+
+  <p id="clickCount"></p>
+  <p id="display"></p>
+  
 </div>
 
 
