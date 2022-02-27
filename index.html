@@ -8,12 +8,6 @@
 </head>
 <body>
 
-<div id="footer">
-<button class="tablink" onclick="openPage('stopwatchdiv', this, 'red')">Stopwatch</button>
-<button class="tablink" onclick="openPage('worldclockdiv', this, 'green')" id="defaultOpen">World Clock</button>
-<button class="tablink" onclick="openPage('countdown', this, 'blue')">Countdown Clock</button>
-<button class="tablink" onclick="openPage('counter', this, 'orange')">Counter</button>
-</div>
 
 <div id="stopwatchdiv" class="tabcontent">
   <h3>Stopwatch</h3>
@@ -35,15 +29,52 @@
 
 <div id="worldclockdiv" class="tabcontent">
   <h3>WorldClock</h3>
-  <p id="world">
+      <table>
+      <thead>
+        <tr>
+          <th>Continent</th>
+          <th>City</th>
+          <th>Timezone<br></th>
+          <th>Date / Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">Africa</td>
+          <td>Harare</td>
+          <td>Central African Time</td>
+          <td><p id="hre"></p></td>
+        </tr>
+        <tr>
+          <td>Abijan<br></td>
+          <td>Greenwich Mean Time</td>
+          <td><p id="abj"></p></td>
+        </tr>
+        <tr>
+          <td rowspan="2">Europe</td>
+          <td>London</td>
+          <td>Greenwich Mean Time</td>
+          <td><p id="lnd"></p></td>
+        </tr>
+        <tr>
+          <td>Amsterdam</td>
+          <td>Central European Timezone</td>
+          <td><p id="amst"></p></td>
+        </tr>
+        <tr>
+          <td rowspan="2">Asia</td>
+          <td>Bangkok</td>
+          <td>Indochina Time</td>
+          <td><p id="bangk"></p></td>
+        </tr>
+        <tr>
+          <td>Taiwan</td>
+          <td>Taipei Timezone</td>
+          <td><p id="taiwn"></p></td>
+        </tr>
+      </tbody>
+      </table>
 
-    <ul id="hre"></ul>
-    <ul id="abj"></ul>
-    <ul id="lnd"></ul>
-    <ul id="amst"></ul>
-    <ul id="bangk"></ul>
-    <ul id="taiwn"></ul>
-    </p>
 <script src="worldClock.js"></script>
 </div>
 
@@ -67,7 +98,12 @@
   
 </div>
 
-
+<div id="footer">
+  <button class="tablink" onclick="openPage('stopwatchdiv', this, 'red')">Stopwatch</button>
+  <button class="tablink" onclick="openPage('worldclockdiv', this, 'green')" id="defaultOpen">World Clock</button>
+  <button class="tablink" onclick="openPage('countdown', this, 'blue')">Countdown Clock</button>
+  <button class="tablink" onclick="openPage('counter', this, 'orange')">Counter</button>
+  </div>
    
 </body>
 </html> 
