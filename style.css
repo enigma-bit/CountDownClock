@@ -34,10 +34,19 @@ body, html {
 
 #footer {
   position : absolute;
-  top : 325px;
+  top : 500px;
   height : 40px;
   margin-top : 40px;
   right: 5px;
   left: 5px;
 }
 
+td, th {
+  border: solid #000000;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: max-content;
+}
