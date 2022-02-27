@@ -7,16 +7,27 @@ var hours = 00;
 
 function myTimer() {
   seconds++;
-  document.getElementById("seconds").innerHTML = seconds;  
-  document.getElementById("minutes").innerHTML = minutes;
-  document.getElementById("hours").innerHTML = hours;
+  if (seconds<=9) {
+    
+    document.getElementById("seconds").innerHTML = '0' + seconds;
+  }
+  else {
+    document.getElementById("seconds").innerHTML = seconds;
+  }
+
+  
 
   if (seconds==60) {
 
     seconds=00;
     document.getElementById("seconds").innerHTML = seconds;
     minutes = minutes+1;
-    document.getElementById("minutes").innerHTML = minutes;
+    if (seconds<=9) {
+      document.getElementById("minutes").innerHTML = '0' + minutes;
+    }
+    else {
+      document.getElementById("minutes").innerHTML = minutes;
+    }
 
   }
 
@@ -24,7 +35,14 @@ function myTimer() {
 
     minutes=00;
     document.getElementById("minutes").innerHTML = minutes;
-    hours=hours+1
+    hours=hours+1;
+
+    if (seconds<=9) {
+      document.getElementById("hours").innerHTML = '0' + hours;
+    }
+    else {
+      document.getElementById("hours").innerHTML = hours;
+    }
 }
 }
 
@@ -43,9 +61,9 @@ document.getElementById("seconds").innerHTML = seconds;
 
 
 function displayReset() {
-hours=0;
-seconds=0;
-minutes=0;
+hours='00';
+seconds='00';
+minutes='00';
 laps.length=0;
 document.getElementById("laprec").innerHTML = laps;
 document.getElementById("hours").innerHTML = hours;
