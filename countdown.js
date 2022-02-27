@@ -12,6 +12,9 @@ function myFunction() {
   + minutes + "m " + seconds + "s ";
   if (distance < 0) {
     clearInterval(x);
+    var msg = new SpeechSynthesisUtterance();
+    msg.text = "Time is up";
+    window.speechSynthesis.speak(msg);
     document.getElementById("countdown").innerHTML = "Time-Up";
   }
 }, 1000);
