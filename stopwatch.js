@@ -22,7 +22,7 @@ function myTimer() {
     seconds=00;
     document.getElementById("seconds").innerHTML = seconds;
     minutes = minutes+1;
-    if (seconds<=9) {
+    if (minutes<=9) {
       document.getElementById("minutes").innerHTML = '0' + minutes;
     }
     else {
@@ -37,7 +37,7 @@ function myTimer() {
     document.getElementById("minutes").innerHTML = minutes;
     hours=hours+1;
 
-    if (seconds<=9) {
+    if (hours<=9) {
       document.getElementById("hours").innerHTML = '0' + hours;
     }
     else {
@@ -47,7 +47,7 @@ function myTimer() {
 }
 
 function start() {
-Addsec = setInterval(myTimer, 1000);
+Addsec = setInterval(myTimer, 100);
 }
 
 function stop() {
