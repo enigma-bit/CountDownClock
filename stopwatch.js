@@ -7,24 +7,48 @@ var hours = 00;
 
 function myTimer() {
   seconds++;
-  document.getElementById("seconds").innerHTML = seconds;
+  if (seconds<=9) {
+    document.getElementById("seconds").innerHTML = '0' + seconds;
+  }
+  else {
+    document.getElementById("seconds").innerHTML = seconds;
+  }
+
   document.getElementById("minutes").innerHTML = minutes;
   document.getElementById("hours").innerHTML = hours;
 
   if (seconds==60) {
 
-    seconds=0;
+    seconds=00;
     document.getElementById("seconds").innerHTML = seconds;
-    minutes= minutes +1;
-    document.getElementById("minutes").innerHTML = minutes;
+
+    
+
+    if (minutes<=9) {
+      minutes= '0' + (minutes +1);
+      document.getElementById("minutes").innerHTML = minutes;
+    }
+    else {
+      minutes= minutes +1;
+      document.getElementById("minutes").innerHTML = minutes;
+    }
   }
 
   if (minutes==60) {
 
-    minutes=0;
+    minutes=00;
     document.getElementById("minutes").innerHTML = minutes;
-    hours = hours + 1;
-    document.getElementById("hours").innerHTML = hours;
+
+    
+
+    if (hours<=9) {
+      hours = '0' + (hours + 1);
+      document.getElementById("hours").innerHTML = '0' + hours;
+    }
+    else {
+      hours = hours + 1;
+      document.getElementById("hours").innerHTML = hours;
+    }
 
   }
 }
