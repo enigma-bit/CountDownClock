@@ -47,7 +47,7 @@ function myTimer() {
 }
 
 function start() {
-Addsec = setInterval(myTimer, 100);
+Addsec = setInterval(myTimer, 1000);
 }
 
 function stop() {
