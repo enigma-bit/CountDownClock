@@ -25,9 +25,3 @@ function myFunction() {
     document.getElementById("countdown").innerHTML = "Time-Up";
   }
 }
-
-
-
-
- 
-  
