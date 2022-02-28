@@ -9,12 +9,13 @@ function myFunction() {
   var hourC = timeC.getHours();
   var minuteC = timeC.getMinutes();
 
-  var distanceHour = hourU - hourC;
-  var distanceMin = minuteU - minuteC;
+  var distanceHour = hourU - hourC ;
+  var distanceMin = minuteU - minuteC ;
 
 
-  document.getElementById("countdown1").innerHTML = distanceHour + "Hours Left";
-  document.getElementById("countdown2").innerHTML = distanceHour + "Minutes Left";
+  document.getElementById("countdown1").innerHTML = distanceHour + " Hours";
+  document.getElementById("and").innerHTML = "and" ;
+  document.getElementById("countdown2").innerHTML = distanceMin + " and Minutes left";
 
 
   if (distanceHour<0 || distanceMin<0) {
