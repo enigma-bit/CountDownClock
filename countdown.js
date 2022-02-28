@@ -7,15 +7,15 @@ function myFunction() {
   var minuteU = parseInt(StrminuteU);
 
   var hourC = timeC.getHours();
-  var minuteC = timeC.getHours();
+  var minuteC = timeC.getMinutes();
 
   var distanceHour = hourU - hourC;
   var distanceMin = minuteU - minuteC;
 
-  var timeLeft = distanceHour + ':' + distanceMin
 
+  document.getElementById("countdown1").innerHTML = distanceHour + " Hours Left";
+  document.getElementById("countdown2").innerHTML = distanceHour + " Minutes Left";
 
-  document.getElementById("countdown").innerHTML = timeLeft;
 
   if (distanceHour<0 || distanceMin<0) {
     var msg = new SpeechSynthesisUtterance();
@@ -24,3 +24,9 @@ function myFunction() {
     document.getElementById("countdown").innerHTML = "Time-Up";
   }
 }
+
+
+
+
+ 
+  
