@@ -13,8 +13,8 @@ function myFunction() {
   var distanceMin = minuteU - minuteC;
 
 
-  document.getElementById("countdown1").innerHTML = distanceHour + " Hours Left";
-  document.getElementById("countdown2").innerHTML = distanceHour + " Minutes Left";
+  document.getElementById("countdown1").innerHTML = distanceHour + "Hours Left";
+  document.getElementById("countdown2").innerHTML = distanceHour + "Minutes Left";
 
 
   if (distanceHour<0 || distanceMin<0) {
