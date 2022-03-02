@@ -15,6 +15,14 @@ function myFunction() {
   var distanceMin = minuteU - minuteC ;
   var distanceSec = secondsU - secondsC ;
 
+  if (distanceMin<0) {
+    distanceHour = distanceHour - 1 ;
+    distanceMin = distanceMin + 60 ;
+  }
+if (distanceSec<0) {
+  distanceMin = distanceMin - 1;
+  distanceSec = distanceSec + 60;
+}
   document.getElementById("countdown1").innerHTML = distanceHour + " Hours" ;
   document.getElementById("countdown2").innerHTML = distanceMin + " Minutes" ;
   document.getElementById("and").innerHTML = "and" ;
@@ -22,10 +30,16 @@ function myFunction() {
 
 
 
-  if (distanceHour<0 || distanceMin<0) {
+  if (distanceHour<0 || distanceMin<0 || distanceSec<0) {
     var msg = new SpeechSynthesisUtterance();
     msg.text = "Time is up";
     window.speechSynthesis.speak(msg);
     document.getElementById("countdown").innerHTML = "Time-Up";
   }
 }
+
+
+
+
+ 
+  
