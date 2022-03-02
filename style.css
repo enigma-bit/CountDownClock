@@ -1,3 +1,67 @@
+h3 {  
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 45px;
+    text-transform: uppercase;
+    color: white;
+}
+
+button {
+  padding: 15px;
+  font-size: 12px;  
+  font-weight: 500;
+  color: #000000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);  
+  cursor: pointer;
+  outline: none;
+ }
+
+#counter {
+  background-color: #d18700;
+}
+
+#counter h3 {
+  color: #000000;
+}
+
+#hours,#minutes,#seconds {
+  font-size: 25px;
+  color: white;
+}
+
+#countdown {
+  background-color: gray;
+}
+
+#countdown h3 {
+  color: #000000;
+}
+
+
+#worldclockdiv {
+  background-color: #c5814b;
+  height: 100%;
+  color: black;
+}
+
+#worldclockdiv h3 {
+  color: #000000;
+}
+
+#stopwatchdiv {
+  background-color: black;
+  height: 100%;
+  color: white;
+}
+
+#laprec {
+  color: white;
+}
+
+
 body, html {
   height: 100%;
   margin: 0;
@@ -27,22 +91,12 @@ body, html {
   display: none;
   padding: 100px 490px;
   height: 100%;
-  border-top-width: 2px;
-  border-top-style: solid;
-  margin-top: 150px;
-  border-left-width: 2px;
-  border-left-style: solid;
-  margin-left: 5px;
-  border-right-width: 2px;
-  border-right-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
-  margin-bottom: 150px;
+  margin-top: -150px;
 }
 
 #footer {
   position : absolute;
-  top : 500px;
+  top : 420px;
   height : 40px;
   margin-top : 40px;
   right: 5px;
