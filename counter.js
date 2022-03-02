@@ -15,3 +15,10 @@ var number = 0;
             }
 
         }
+
+        function reset() {
+            number = 0;
+            document.getElementById("display").innerHTML = " ";
+            document.getElementById("clickCount").innerHTML = " ";
+
+        }
