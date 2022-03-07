@@ -5,9 +5,12 @@
 <title>Time Project</title>
 <link rel="stylesheet" href="style.css">
 <script src="tabs.js"></script>
+
+
 </head>
 <body>
 
+  
 
 <div id="stopwatchdiv" class="tabcontent">
   <h3>Stopwatch</h3>
@@ -90,20 +93,21 @@
     <script src="countdown.js"></script>
     <label for="start">Enter your time :</label>   
       <input type="time" id="time" value="" step="2" required>    
-      <button onclick="myFunction()">Submit Time</button>  
+      <button onclick="refresh()">Submit Time</button>  
 </div>
 
 <div id="counter" class="tabcontent">
   <script src="counter.js"></script>
+
   <h3> Counter </h3>
-  
-  
+
   <p id="clickCount"></p>
   <p id="display"></p>
-    
+
   <button type="button" onClick="number++;updateNumber();checkNumber()">Add.</button>
   <button type="button" onClick="number--;updateNumber();checkNumber()">Subtract.</button>
   <button type="button" onClick="reset()">Reset</button>
+
 
 
   
