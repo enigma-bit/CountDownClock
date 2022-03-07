@@ -101,12 +101,17 @@
 
   <h3> Counter </h3>
 
-  <p id="clickCount"></p>
-  <p id="display"></p>
+  <p id="clickCount" style="padding-left: 90px;"></p>
+  
 
-  <button type="button" onClick="number++;updateNumber();checkNumber()">Add.</button>
-  <button type="button" onClick="number--;updateNumber();checkNumber()">Subtract.</button>
+  <button type="button" onClick="number++;updateNumber();checkNumberEvenOdd();checkNumberPrime()">Add.</button>
   <button type="button" onClick="reset()">Reset</button>
+  <button type="button" onClick="number--;updateNumber();checkNumberEvenOdd();checkNumberPrime()">Subtract.</button>
+  <p><span id="display" style="border-left-width: 1px;border-left-style: solid;border-top-width: 1px;border-top-style:
+   solid;border-right-width: 1px;border-right-style: solid;border-bottom-width: 1px;border-bottom-style: solid;margin-left: 10px;margin-right: 20px;">Odd/Even</span>      <span id="display2" style="border-left-width: 1px;border-left-style: solid;border-top-width: 1px;
+   border-top-style: solid;border-bottom-width: 1px;border-bottom-style: solid;border-right-width: 1px;
+   border-right-style: solid;">Prime/Not Prime</span>
+  
 
 
 
