@@ -1,114 +1,121 @@
 h3 {  
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 100;
-    font-size: 45px;
-    text-transform: uppercase;
-    color: white;
-}
-
-button {
-  padding: 15px;
-  font-size: 12px;  
-  font-weight: 500;
-  color: #000000;
-  background-color: #fff;
-  border: none;
-  border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);  
-  cursor: pointer;
-  outline: none;
- }
-
-#counter {
-  background-color: #d18700;
-}
-
-#counter h3 {
-  color: #000000;
-}
-
-#hours,#minutes,#seconds {
-  font-size: 25px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 100;
+  font-size: 45px;
+  text-transform: uppercase;
   color: white;
 }
 
+button {
+padding: 15px;
+font-size: 12px;  
+font-weight: 500;
+color: #000000;
+background-color: #fff;
+border: none;
+border-radius: 45px;
+box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);  
+cursor: pointer;
+outline: none;
+}
+
+#counter {
+background-color: #d18700;
+}
+
+#counter h3 {
+color: #000000;
+}
+
+#hours,#minutes,#seconds {
+font-size: 25px;
+color: white;
+}
+
 #countdown {
-  background-color: gray;
+background-color: gray;
 }
 
 #countdown h3 {
-  color: #000000;
+color: #000000;
+}
+
+.cell {
+  border-collapse: collapse;
+  border: 1px solid black;
+  
 }
 
 
 #worldclockdiv {
-  background-color: #c5814b;
-  height: 100%;
-  color: black;
+background-color: #c5814b;
+height: 100%;
+color: black;
 }
 
 #worldclockdiv h3 {
-  color: #000000;
+color: #000000;
 }
 
 #stopwatchdiv {
-  background-color: black;
-  height: 100%;
-  color: white;
+background-color: black;
+height: 100%;
+color: white;
 }
 
 #laprec {
-  color: white;
+color: white;
 }
 
 
 body, html {
-  height: 100%;
-  margin: 0;
-  font-family: 'Times New Roman', Times, serif;
+height: 100%;
+margin: 0;
+font-family: 'Times New Roman', Times, serif;
 }
 
 
 .tablink {
-  background-color: #555;
-  color: white;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 25%;
+background-color: #555;
+color: white;
+float: left;
+border: none;
+outline: none;
+cursor: pointer;
+padding: 14px 16px;
+font-size: 17px;
+width: 25%;
 }
 
 .tablink:hover {
-  background-color: #777;
+background-color: #777;
 }
 
 
 .tabcontent {
-  color: black;
-  display: none;
-  padding: 100px 490px;
-  height: 100%;
-  margin-top: -150px;
+color: black;
+display: none;
+padding: 100px 490px;
+height: 100%;
+margin-top: -150px;
 }
 
 #footer {
-  position : absolute;
-  top : 420px;
-  height : 40px;
-  margin-top : 40px;
-  right: 5px;
-  left: 5px;
+position : absolute;
+top : 420px;
+height : 40px;
+margin-top : 40px;
+right: 5px;
+left: 5px;
 }
 
 td, th {
-  border: solid #000000;
+border: solid #000000;
 }
 
 table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: max-content;
+font-family: arial, sans-serif;
+border-collapse: collapse;
+width: max-content;
+border-style: double;
 }
